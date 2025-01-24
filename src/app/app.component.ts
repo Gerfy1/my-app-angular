@@ -6,9 +6,4 @@ import { Component } from '@angular/core';
   standalone: false,
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  exibeHome: boolean = true;
-  destruir(){
-    this.exibeHome = false;
-  }
-}
+export class AppComponent {}

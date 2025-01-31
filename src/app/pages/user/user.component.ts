@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { __param } from 'tslib';
 
 @Component({
   selector: 'app-user',
@@ -14,8 +15,12 @@ export class UserComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) =>{
-      this.username = params.get('username');
+    this.getNome();
+  }
+
+  getNome(){
+    this.route.queryParams.subscribe((params) => {
+      this.username = params['username'];
     })
   }
 }

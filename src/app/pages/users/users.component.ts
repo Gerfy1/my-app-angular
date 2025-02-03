@@ -28,4 +28,8 @@ export class UsersComponent {
       idade: 42
     }
   ]
+
+  infoUserSelecionado(user: User){
+    console.log(user);
+  }
 }

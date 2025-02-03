@@ -1,3 +1,7 @@
 <div class="row">
-  <app-user-card *ngFor="let user of users" [user]="user" class="col-md"></app-user-card>
+  <app-user-card
+  (userInfoEmitter)="infoUserSelecionado($event)"
+  *ngFor="let user of users"
+  [user]="user"
+  class="col-md"></app-user-card>
 </div>

@@ -10,6 +10,9 @@ import { User } from '../../_models/user';
 })
 export class UsersComponent {
   //users: String[] = ['Fernando', 'Ricardo', 'Lucas', 'Pedro', 'Marina'];
+
+  userSelecionado: User | undefined;
+
   users: User [] = [
     {
       nome: 'Fernando',
@@ -30,6 +33,6 @@ export class UsersComponent {
   ]
 
   infoUserSelecionado(user: User){
-    console.log(user);
+    this.userSelecionado = user;
   }
 }

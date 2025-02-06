@@ -56,5 +56,6 @@ export class UsersComponent implements OnInit {
 
   infoUserSelecionado(user: User) {
     this.userSelecionado = user;
+    this.userService.setUser(user);
   }
 }

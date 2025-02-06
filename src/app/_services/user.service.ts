@@ -9,6 +9,7 @@ export class UserService {
   user: User | undefined;
 
   setUser( user: User){
+    localStorage.setItem('user', JSON.stringify(user));
     this.user = user;
   }
 

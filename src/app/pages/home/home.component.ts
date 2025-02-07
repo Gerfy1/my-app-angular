@@ -21,11 +21,12 @@ export class HomeComponent {
   }
 
   getGitUser(){
+
     this.userServicee.getGitUser(this.username).subscribe((response: UserGit) => {
       this.user = response;
     },(error) =>{
       this.toastr.error('Usuário não encontrato', 'Erro');
-    });
+    }
+  );
   }
-
 }

@@ -1,6 +1,7 @@
 import { Component, DoCheck, OnDestroy, OnInit } from '@angular/core';
 import { UserService } from '../../_services/user.service';
 import { User } from '../../_models/user';
+import { UserGit } from '../../_models/userGit';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,8 @@ import { User } from '../../_models/user';
 })
 export class HomeComponent implements OnInit {
 
+  user: UserGit | undefined;
+
   constructor (private userServicee: UserService ){
 
   }
@@ -20,8 +23,8 @@ export class HomeComponent implements OnInit {
   }
 
   getGitUser(){
-    this.userServicee.getGitUser('facebook').subscribe((response: any) => {
-      console.log(response);
+    this.userServicee.getGitUser('facebook').subscribe((response: UserGit) => {
+      this.user = response;
     })
   }
 

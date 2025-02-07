@@ -6,5 +6,4 @@ export interface UserGit{
   following: Number;
   html_url: String;
   avatar_url: String;
-
 }

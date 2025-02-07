@@ -10,20 +10,17 @@ import { UserGit } from '../../_models/userGit';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   user: UserGit | undefined;
+  username: string = '';
 
   constructor (private userServicee: UserService ){
 
   }
 
-  ngOnInit(): void {
-    this.getGitUser();
-  }
-
   getGitUser(){
-    this.userServicee.getGitUser('facebook').subscribe((response: UserGit) => {
+    this.userServicee.getGitUser(this.username).subscribe((response: UserGit) => {
       this.user = response;
     })
   }

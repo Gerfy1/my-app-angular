@@ -1,4 +1,12 @@
-<div class="container">
+<div class="row justify-content-center">
+ <div class="col-md-4">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Buscar username" aria-label="Buscar username" [(ngModel)]="username">
+    <button (click)="getGitUser()" class="btn btn-success" type="button">Pesquisar</button>
+  </div>
+ </div>
+</div>
+<div *ngIf="user" class="container">
   <div class="row justify-content-center">
     <div class="col-md-4">
       <div class="card text-center">
